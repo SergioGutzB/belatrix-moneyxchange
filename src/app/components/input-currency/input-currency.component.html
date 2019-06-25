@@ -1,3 +1,9 @@
-<p>
-  input-currency works!
-</p>
+<div class="input-currency">
+  <input
+  class="input-currency__input"
+  autocomplete="off"
+  [ngModel]="value"
+  (ngModelChange)="changeValue($event)"
+  value="{{ value }}"
+  name="inputCurrency">
+</div>

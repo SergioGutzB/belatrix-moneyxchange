@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { InputCurrencyComponent } from './input-currency.component';
 
@@ -8,9 +9,10 @@ describe('InputCurrencyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputCurrencyComponent ]
+      declarations: [InputCurrencyComponent],
+      imports: [FormsModule, ReactiveFormsModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +24,11 @@ describe('InputCurrencyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should allow only numbers not letters', () => {
+  });
+
+  it('should show span wiht UDS when Iput() symbol is equal to USD', () => {
+  });
+
 });
