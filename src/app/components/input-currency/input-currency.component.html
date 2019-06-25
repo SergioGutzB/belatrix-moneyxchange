@@ -2,8 +2,8 @@
   <input
   class="input-currency__input"
   autocomplete="off"
-  [ngModel]="value"
-  (ngModelChange)="changeValue($event)"
-  value="{{ value }}"
-  name="inputCurrency">
+  [value]="value"
+  [disabled]="isDisabled"
+  (input)="onInput($event.target.value)"
+  >
 </div>

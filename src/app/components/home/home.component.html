@@ -1,9 +1,9 @@
 <app-header></app-header>
 <section class="home">
   <div>
-    Home
+    <app-input-currency [(ngModel)]="moneyToExchange"></app-input-currency>
+    <p>{{ moneyToExchange }}</p>
   </div>
-
 
 </section>
 <app-footer></app-footer>
