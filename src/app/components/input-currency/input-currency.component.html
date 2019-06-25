@@ -2,7 +2,7 @@
   <input
   class="input-currency__input"
   autocomplete="off"
-  [value]="value"
+  [value]="value | currency"
   [disabled]="isDisabled"
   (input)="onInput($event.target.value)"
   >

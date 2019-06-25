@@ -8,7 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InputCurrencyComponent } from './components/input-currency/input-currency.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe } from './helpers/pipes/currency.pipe'
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http'
     HeaderComponent,
     FooterComponent,
     InputCurrencyComponent,
+    CurrencyPipe,
   ],
   imports: [
     BrowserModule,
