@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipe } from './helpers/pipes/currency.pipe';
 import { CurrencyDirective } from './helpers/directives/currency.directive';
+import { ExchangeComponent } from './components/exchange/exchange.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CurrencyDirective } from './helpers/directives/currency.directive';
     InputCurrencyComponent,
     CurrencyPipe,
     CurrencyDirective,
+    ExchangeComponent,
   ],
   imports: [
     BrowserModule,
