@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { InputCurrencyComponent } from './input-currency.component';
+import { CurrencyDirective } from 'src/app/helpers/directives/currency.directive';
+import { CurrencyPipe } from 'src/app/helpers/pipes/currency.pipe';
+import { By } from '@angular/platform-browser';
 
 describe('InputCurrencyComponent', () => {
   let component: InputCurrencyComponent;
@@ -9,8 +12,12 @@ describe('InputCurrencyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [InputCurrencyComponent],
-      imports: [FormsModule, ReactiveFormsModule]
+      declarations: [InputCurrencyComponent, CurrencyPipe, CurrencyDirective],
+      imports: [FormsModule, ReactiveFormsModule],
+      providers: [
+        CurrencyPipe,
+        CurrencyDirective
+      ],
     })
       .compileComponents();
   }));
@@ -25,7 +32,12 @@ describe('InputCurrencyComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should allow only numbers not letters', () => {
+  it('should show number wiht currency format', () => {
+    component = fixture.componentInstance;
+    component.onInput('45345343.45632');
+    fixture.detectChanges();
+    const element = fixture.debugElement.query(By.css('input[type=text]')).nativeElement;
+    expect(element.value).toEqual('45,345,343.4563');
   });
 
   it('should show span wiht UDS when Iput() symbol is equal to USD', () => {

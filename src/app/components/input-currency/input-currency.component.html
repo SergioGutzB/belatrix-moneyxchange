@@ -1,8 +1,9 @@
 <div class="input-currency">
   <input
+  type="text"
   class="input-currency__input"
   autocomplete="off"
-  [value]="value | currency"
+  [value]="value | exchangeCcurrency"
   [disabled]="isDisabled"
   (input)="onInput($event.target.value)"
   appCurrency
