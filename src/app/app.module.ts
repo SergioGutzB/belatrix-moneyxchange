@@ -9,7 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InputCurrencyComponent } from './components/input-currency/input-currency.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CurrencyPipe } from './helpers/pipes/currency.pipe'
+import { CurrencyPipe } from './helpers/pipes/currency.pipe';
+import { CurrencyDirective } from './helpers/directives/currency.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CurrencyPipe } from './helpers/pipes/currency.pipe'
     FooterComponent,
     InputCurrencyComponent,
     CurrencyPipe,
+    CurrencyDirective,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,10 @@ import { CurrencyPipe } from './helpers/pipes/currency.pipe'
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    CurrencyPipe,
+    CurrencyDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
