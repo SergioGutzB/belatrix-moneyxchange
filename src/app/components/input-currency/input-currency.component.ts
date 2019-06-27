@@ -1,4 +1,4 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
+import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -15,9 +15,12 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class InputCurrencyComponent implements OnInit, ControlValueAccessor {
 
+  @Input()
+  callback: (args?: any) => void;
   value: string;
   isDisabled: boolean;
-  onChange = (_: any) => { };
+  onChange = (_: any) => {
+  }
   onTouch = () => { };
 
   constructor() { }
@@ -26,10 +29,10 @@ export class InputCurrencyComponent implements OnInit, ControlValueAccessor {
   }
 
   onInput(value: string) {
-    console.log('value: ', value);
     this.value = value;
     this.onTouch();
     this.onChange(this.value);
+    this.callback();
   }
 
   writeValue(value: any): void {

@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipe } from './helpers/pipes/currency.pipe';
 import { CurrencyDirective } from './helpers/directives/currency.directive';
 import { ExchangeComponent } from './components/exchange/exchange.component';
+import { XchangeService } from './services/xchange.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExchangeComponent } from './components/exchange/exchange.component';
   ],
   providers: [
     CurrencyPipe,
-    CurrencyDirective
+    CurrencyDirective,
+    XchangeService
   ],
   bootstrap: [AppComponent]
 })

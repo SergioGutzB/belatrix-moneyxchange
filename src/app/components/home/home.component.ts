@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  moneyToExchange: string = '2343456';
+
   constructor() { }
 
   ngOnInit() {
