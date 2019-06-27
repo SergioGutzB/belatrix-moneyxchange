@@ -1,0 +1,40 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+   {
+      "name": "cache-first",
+      "urls":[
+        "http://data.fixer.io/latest?access_key=5e9f68437e8066d7c1914dd4582b40fa&base=EUR&symbols=USD"
+      ],
+      "cacheConfig":{
+        "strategy":"performance",
+        "maxSize":10,
+        "maxAge":"10m"
+      }
+    }
+  ]
+}

@@ -4,5 +4,5 @@
     <app-input-currency [formControlName]="'money'"></app-input-currency>
     <app-input-currency [formControlName]="'change'"></app-input-currency>
   </form>
-  <button for="xchange-form" type="submit" (click)="convert()" [disabled]="xchangeForm.isInvalid" class="xchange__button">Convert</button>
+  <button for="xchange-form" type="submit" (click)="convert()" [disabled]="xchangeForm.invalid" class="xchange__button">Convert</button>
 </div>

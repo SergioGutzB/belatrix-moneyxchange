@@ -1,28 +1,35 @@
 @import "../../../styles/variables";
 
 @include media(all) {
-  .footer {
+  :host {
     height: 100%;
+    position: relative;
+    background-color: #38478e14;
+  }
+  .footer {
     margin: 0px;
     padding: 30px 10%;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 40px;
-    background-color: #38478e14;
     border-top: 2px solid #fcb813;
+    align-content: center;
     &__column {
       display: grid;
       grid-template-columns: auto;
       justify-items: center;
       align-items: center;
+      align-content: flex-start;
       &__title {
         font-size: 1.2em;
         margin: 0px;
+        min-height: 30px;
       }
       &__item {
         text-align: left;
         font-size: 1em;
         color: gray;
+        min-height: 20px;
       }
 
       &__social {
