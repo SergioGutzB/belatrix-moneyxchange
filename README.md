@@ -4,15 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features
 
-- Proyecto creado en Angular 7.
-- API usada fixer.io.
-- Estilos unicamente con Sass.
-- Pipe exchangeCurreny creado para dar formato tipo moneda USD.
-- Directiva exchangeDirective creada para validar y formatar el texto ingresado en los Input con formato moneda USD.
-- ServiceWorker configurado para mantener en cache el response del API fixer.io durante 10 minutos, sólo funciona en producción.
-- Tests creados para el componente excange y el pipe excahngePipes.
-- Se creó una logia adicional para consumir el servicio cada 10 minutos, no es ningún tipo de intervalo, es una validación que guarda el timestamp de la ultima respuesta del servidor y valida si ya han pasado 10 minutos para volver hacer el llamdo al servidor, de lo contrario utiliza el response ya guardado. Esto solo se ejecuta cuando hay alguna acción clik en el boton convertir. De ésta forma priminiendo hacer request automaticos por intervalos de tiempo.
-- Para los inputs se creo un componente implementando ControlValueAccessor.
+- Project created in Angular 7.
+- API uses fixer.io
+- Styles only with Sass
+- Exchange of pipeCurrency created to form a coin.
+- ExchangeDirective directive created to validate and format the text entered in the Input with currency format
+- ServiceWorker configured to maintain the response of the fixer.io API in the cache for 10 minutes, only works in production.
+- Tests created for the excange component and the excahngePipes pipeline.
+- An additional logic was created to consume the service every 10 minutes, it is not any type of interval, it is a validation that saves the timestamp of the - last response from the server and validates if 10 minutes have already again to return the call to the server , otherwise, it use the response already saved. - - This only runs when there is some action  on click button. In this way, it prevent to make automatic requests for time intervals.
 
 ## Install dependencies.
 
