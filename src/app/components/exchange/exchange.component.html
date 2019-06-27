@@ -1,5 +1,7 @@
 <div class="exchange">
-  <app-input-currency [(ngModel)]="money" [callback]="convert.bind(this)"></app-input-currency>
-  <app-input-currency [(ngModel)]="change" [disabled]="true"></app-input-currency>
-  <button (click)="convert()">Convert</button>
+  <form [formGroup]="xchangeForm" (ngSubmit)="convert()" name="xchange-form">
+    <app-input-currency [formControlName]="'money'" [callback]="convert.bind(this)"></app-input-currency>
+    <app-input-currency [formControlName]="'change'"></app-input-currency>
+    <button type="submit" (click)="convert()" [disabled]="xchangeForm.isInvalid">Convert</button>
+  </form>
 </div>

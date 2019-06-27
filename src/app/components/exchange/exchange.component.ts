@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IXchange } from 'src/app/models/xchange';
 import { XchangeService } from 'src/app/services/xchange.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-exchange',
@@ -9,12 +10,12 @@ import { XchangeService } from 'src/app/services/xchange.service';
 })
 export class ExchangeComponent implements OnInit {
 
-  public money: string;
-  public change: string;
   public xchange: IXchange;
-  constructor(private xchangeService: XchangeService) { }
+  public xchangeForm: FormGroup;
+  constructor(private xchangeService: XchangeService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.initForm();
     this.getXchange();
   }
 
@@ -26,8 +27,17 @@ export class ExchangeComponent implements OnInit {
   }
 
   convert() {
+
     if (!this.xchange) { return; }
-    this.change = (this.xchange.rates.EUR * parseFloat(this.money.replace(/\,/g, ''))).toString();
+    const money = parseFloat(this.xchangeForm.controls.money.value.replace(/\,/g, ''));
+    this.xchangeForm.controls.change.setValue((this.xchange.rates.EUR * money).toString());
+  }
+
+  private initForm() {
+    this.xchangeForm = this.fb.group({
+      money: ['', Validators.required],
+      change: [{ value: '', disabled: true }]
+    });
   }
 
 }
