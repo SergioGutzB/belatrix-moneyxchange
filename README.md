@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Exchange of pipeCurrency created to format a coin.
 - ExchangeDirective directive created to validate and format the text entered in the Input with currency format
 - ServiceWorker configured to maintain the response of the fixer.io API in the cache for 10 minutes, only works in production.
-- Tests created for the excange component and the excahngePipes pipeline.
+- Tests created for the exchange component and the exchange pipe.
 - An additional logic was created to consume the service every 10 minutes, it is not any type of interval, it is a validation that saves the timestamp of the - last response from the server and validates if 10 minutes have already again to return the call to the server , otherwise, it use the response already saved. - - This only runs when there is some action  on click button. In this way, it prevent to make automatic requests for time intervals.
 
 ## Install dependencies.
