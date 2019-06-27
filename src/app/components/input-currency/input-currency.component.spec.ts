@@ -1,8 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputCurrencyComponent } from './input-currency.component';
-import { CurrencyDirective } from 'src/app/helpers/directives/currency.directive';
 import { CurrencyPipe } from 'src/app/helpers/pipes/currency.pipe';
 import { By } from '@angular/platform-browser';
 
@@ -12,11 +10,10 @@ describe('InputCurrencyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [InputCurrencyComponent, CurrencyPipe, CurrencyDirective],
+      declarations: [InputCurrencyComponent, CurrencyPipe],
       imports: [FormsModule, ReactiveFormsModule],
       providers: [
         CurrencyPipe,
-        CurrencyDirective
       ],
     })
       .compileComponents();

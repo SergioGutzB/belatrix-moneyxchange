@@ -10,7 +10,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => InputCurrencyComponent),
       multi: true
-    }
+    },
   ]
 })
 export class InputCurrencyComponent implements OnInit, ControlValueAccessor {

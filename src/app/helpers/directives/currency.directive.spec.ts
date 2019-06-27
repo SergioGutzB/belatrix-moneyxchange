@@ -1,8 +1,8 @@
 import { CurrencyDirective } from './currency.directive';
 
-xdescribe('CurrencyDirective', () => {
-  it('should create an instance', () => {
-    const directive = new CurrencyDirective(null, null);
+describe('CurrencyDirective', () => {
+  xit('should create an instance', () => {
+    const directive = new CurrencyDirective( undefined, undefined);
     expect(directive).toBeTruthy();
   });
 });

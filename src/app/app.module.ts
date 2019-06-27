@@ -40,6 +40,11 @@ import { environment } from '../environments/environment';
     CurrencyDirective,
     XchangeService
   ],
+  exports: [
+    CurrencyPipe,
+    CurrencyDirective,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
