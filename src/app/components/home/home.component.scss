@@ -1,0 +1,24 @@
+@import "../../../styles/variables";
+
+@include media(all) {
+  .home {
+    position: relative;
+    padding: 80px 10% 0;
+    background: linear-gradient(
+      90deg,
+      rgb(24, 46, 126),
+      rgb(55, 72, 143),
+      rgb(74, 64, 150)
+    );
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-end;
+    justify-items: center;
+  }
+}
+
+@include media(xs) {
+  .home {
+    padding: 40px 20px 0;
+  }
+}

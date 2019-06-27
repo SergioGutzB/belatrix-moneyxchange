@@ -1,7 +1,8 @@
-<div class="exchange">
-  <form [formGroup]="xchangeForm" (ngSubmit)="convert()" name="xchange-form">
-    <app-input-currency [formControlName]="'money'" [callback]="convert.bind(this)"></app-input-currency>
+<div class="xchange">
+  <div class="xchange__rate" *ngIf="xchange && xchange.rates">USD = {{ xchange.rates.EUR | exchangeCcurrency }}  EUR</div>
+  <form [formGroup]="xchangeForm" (ngSubmit)="convert()" name="xchange-form" class="xchange__form">
+    <app-input-currency [formControlName]="'money'"></app-input-currency>
     <app-input-currency [formControlName]="'change'"></app-input-currency>
-    <button type="submit" (click)="convert()" [disabled]="xchangeForm.isInvalid">Convert</button>
   </form>
+  <button for="xchange-form" type="submit" (click)="convert()" [disabled]="xchangeForm.isInvalid" class="xchange__button">Convert</button>
 </div>

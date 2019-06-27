@@ -32,7 +32,9 @@ export class InputCurrencyComponent implements OnInit, ControlValueAccessor {
     this.value = value;
     this.onTouch();
     this.onChange(this.value);
-    this.callback();
+    if (this.callback) {
+      this.callback();
+    }
   }
 
   writeValue(value: any): void {

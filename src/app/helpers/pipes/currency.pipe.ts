@@ -7,13 +7,17 @@ export class CurrencyPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if (value) {
-      const newValue = value.replace(/([^\d, \.])+/g, '');
-      if (newValue && newValue.charAt(newValue.length - 1) !== '.') {
-        if (!isNaN(parseFloat(newValue))) {
-          const formatValue = parseFloat(newValue.replace(/,/g, ''))
-            .toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 4, minimumFractionDigits: 0 });
-          return formatValue;
-        }
+      let newValue;
+      if (!isNaN(parseFloat(value))) {
+        newValue = value.toString().replace(/([^\d, \.])+/g, '');
+      } else {
+        newValue = value.replace(/([^\d, \.])+/g, '');
+      }
+      console.log(!isNaN(parseFloat(value)));
+      if (newValue && newValue.charAt(value.length - 1) !== '.') {
+        const formatValue = parseFloat(newValue.replace(/,/g, ''))
+          .toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 4, minimumFractionDigits: 0 });
+        return formatValue;
       }
       return newValue;
     }
