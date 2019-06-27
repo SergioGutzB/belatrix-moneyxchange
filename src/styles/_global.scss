@@ -9,6 +9,10 @@
     display: grid;
     overflow-x: hidden;
   }
+  button:focus, input:focus,
+  button:active, input:active {
+    outline: none;
+  }
 }
 
 
