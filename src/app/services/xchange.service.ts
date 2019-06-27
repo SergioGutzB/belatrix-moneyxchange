@@ -29,6 +29,19 @@ export class XchangeService {
 
   }
 
+  /**
+   *
+   * metodo para invertir la base en un objecto IXchange. EUR -> USD : USD -> EUR
+   * el metodo se llama al responder el servicio fixer.com para convertir de USD a EUR,
+   * por defecto el servicio solo permite onvertir de EUR a USD para un plan FREE.
+   *
+   * @private
+   * @param {IXchange} xchange
+   * @param {string} base
+   * @param {string} symbol
+   * @returns {IXchange}
+   * @memberof XchangeService
+   */
   private invertBase(xchange: IXchange, base: string, symbol: string): IXchange {
     const rate = 1 / xchange.rates[symbol];
     return {

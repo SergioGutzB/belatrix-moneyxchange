@@ -13,7 +13,6 @@ export class CurrencyPipe implements PipeTransform {
       } else {
         newValue = value.replace(/([^\d, \.])+/g, '');
       }
-      console.log(!isNaN(parseFloat(value)));
       if (newValue && newValue.charAt(value.length - 1) !== '.') {
         const formatValue = parseFloat(newValue.replace(/,/g, ''))
           .toLocaleString('en-US', { style: 'decimal', maximumFractionDigits: 4, minimumFractionDigits: 0 });
