@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Project created in Angular 7.
 - API uses fixer.io
 - Styles only with Sass
-- Exchange of pipeCurrency created to form a coin.
+- Exchange of pipeCurrency created to format a coin.
 - ExchangeDirective directive created to validate and format the text entered in the Input with currency format
 - ServiceWorker configured to maintain the response of the fixer.io API in the cache for 10 minutes, only works in production.
 - Tests created for the excange component and the excahngePipes pipeline.
