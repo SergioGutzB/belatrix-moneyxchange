@@ -23,7 +23,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Production server with static-serve
 
-Run `npm start:prod` for a production server. Navigate to `http://localhost:9080/`. Now ServiceWorker it working.
+Run `npm run start:prod` for a production server. Navigate to `http://localhost:9080/`. Now ServiceWorker it working.
 
 ## Build
 
@@ -31,7 +31,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Build Production
 
-Run `npm build:prod` to build the project mode production. 
+Run `npm run build:prod` to build the project mode production. 
 
 ## Running unit tests
 
