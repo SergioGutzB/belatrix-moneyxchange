@@ -1,8 +1,8 @@
 <div class="xchange">
   <div class="xchange__rate" *ngIf="xchange && xchange.rates">USD = {{ xchange.rates.EUR | exchangeCcurrency }}  EUR</div>
   <form [formGroup]="xchangeForm" (ngSubmit)="newConversion()" name="form" id="xchange-form" class="xchange__form">
-    <app-input-currency [formControlName]="'money'"></app-input-currency>
-    <app-input-currency [formControlName]="'change'"></app-input-currency>
+    <app-input-currency [formControlName]="'money'" symbol="USD"></app-input-currency>
+    <app-input-currency [formControlName]="'change'" symbol="EUR"></app-input-currency>
   </form>
   <button  type="submit" form="xchange-form" [disabled]="xchangeForm.invalid" class="xchange__button">Convert</button>
 </div>

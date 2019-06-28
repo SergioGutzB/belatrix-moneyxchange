@@ -17,6 +17,8 @@ export class InputCurrencyComponent implements OnInit, ControlValueAccessor {
 
   @Input()
   callback: (args?: any) => void;
+  @Input()
+  symbol: string;
   value: string;
   isDisabled: boolean;
   onChange = (_: any) => {
